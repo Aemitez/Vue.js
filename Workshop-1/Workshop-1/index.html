@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+    <div v-if="showGame">
+    <section class="row">
+        <div class="small-6 columns">
+            <h1 class="text-center">Pikachu</h1>
+            <img class="center" src="./image/Pikachu.jpg" alt="">
+            <div class="healthbar">
+                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; " v-bind:style="{width: hp +'%' }">
+
+                </div>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <h1 class="text-center">MONSTER</h1>
+            <img class="center" src="./image/Monster.jpg" alt="">
+            <div class="healthbar">
+               <div class="healthbar text-center" style="background-color: green; margin: 0; color: white; " v-bind:style="{width: hp +'%' }">
+
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="row controls">
+        <div class="small-12 columns">
+            <button id="attack" v-on:click="attack">ATTACK</button>
+            <button id="heal" v-on:click="heal">Potion</button>
+            <button id="give-up" v-on:click="reset">GIVE UP</button>
+        </div>
+    </section>
+    </div>
+    <div v-if="showPokemon">
+    <section class="row controls">
+        <div class="small-12 columns">
+            <img src="./image/logo.png" alt="">
+            <button id="start-game" v-on:click="start">START NEW GAME</button>
+        </div>
+    </section>
+   
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data(){ 
+           return {
+              showGame:false,
+              showPokemon:true,
+              hp:100
+           }
+        },methods:{
+            start(){
+                this.showGame = !this.showGame;
+                this.showPokemon = !this.showPokemon;
+            },
+            attack(){
+                this.hp = this.hp - 20;
+                if(this.hp <= 0){
+                    console.log("lost");
+                }
+            },
+            heal(){
+                this.hp = 40; 
+            },
+            reset(){
+                this.hp = 100;
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

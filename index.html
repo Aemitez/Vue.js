@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <span v-once>{{msg}}</span>
+        <a v-bind:href="link">google</a>
+        <span>{{newmsg()}}</span>
+        
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                msg: "Hello Aem",
+                msg1:"hi",
+                link:"https://www.google.co.th"
+            }
+        },
+        methods: {
+            newmsg(){
+                 this.msg = "hello"
+                 return this.msg
+            }
+        }
+    });
+
+</script>
+
+</html>

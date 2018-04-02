@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="app">
+      <button class="btn btn-outline-success" v-on:click="increasenum">ADD</button><h2>{{number}}</h2>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+               number: 0
+            }
+        },
+        methods: {
+            increasenum(){
+                this.number++
+            }
+        }
+    });
+
+</script>
+
+</html>

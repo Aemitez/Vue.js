@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <span v-once>{{msg}}</span>
+        <span v-html="linkgoogle"></span>
+        <span v-html="linkface"></span>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                msg: "Hello Aem",
+                linkgoogle:'<a href="http://www.google.co.th">go google</a> ' ,
+                linkface:'<a href="http://www.facebook.co.th">go facebook</a> ' 
+            }
+        }
+    });
+
+</script>
+
+</html>

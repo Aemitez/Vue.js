@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="item in items">
+                {{item.name}} {{item.sname}}
+            </li>
+        </ul>
+        <input type="text" v-model="Textname">
+        <input type="text" v-model="Textsname">
+        <button v-on:click="addText">add</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data(){ 
+           return {
+               Textname:"",
+               Textsname:"",
+               items:[{
+                   name:'1',
+                   sname:'s1'
+               },{
+                   name:'2',
+                   sname:'s2'
+               }]
+           }
+        },methods:{
+            addText(){
+                this.items.push({
+                    name:this.Textname,
+                    sname:this.Textsname
+                });
+                this.name = '';
+            }
+        }
+    });
+
+</script>
+
+</html>

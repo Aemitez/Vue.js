@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+     <button v-on:click="toggle1">button</button>
+     <p v-if="show">TEST</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data(){ 
+           return {
+               show:true
+           };
+        },
+        methods: {
+            toggle1() {
+               this.show = !this.show;  
+            }  
+        }
+    });
+
+</script>
+
+</html>
